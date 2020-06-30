@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chairman</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- CSS stylesheets -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Fredericka+the+Great&family=Montserrat&family=Pacifico&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9815e7a225.js" crossorigin="anonymous"></script>
+
+  <!-- bootstrap scripts -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <!-- google map API -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXGTblhzow4iBgtnoW_7FI7lgIHx_D41s&callback=initMap"
+   type="text/javascript"></script>
+
+
+  <style>
+    .social-link {
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      border-radius: 50%;
+      transition: all 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .social-link:hover,
+    .social-link:focus {
+      background: #ddd;
+      text-decoration: none;
+      color: #555;}
+
+      html,body  {
+      width: 100%;
+      margin: 0px;
+      padding: 0px;
+      overflow-x: hidden;
+  }
+
+/* body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        border-style: groove;
+        background-color: #fff;
+      } */
+
+      h1 {
+        color: #06623b;
+        font-size: 2.5rem;
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+
+      pre {
+        font-family: Montserrat;
+      }
+
+
+      h4 {
+        font-style: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        color: #fff;
+      }
+
+      .header-contact {
+        margin: 2px;
+        display: block;
+        color: black;
+      }
+
+      #title .row {
+        height: 400px;
+        width: 1224px;
+      }
+
+      .para {
+        font-size: 1.3rem;
+        color: #06623b;
+        font-weight: normal;
+        font-family: 'Pacifico', cursive;
+        height: 15px;
+      }
+
+      #title {
+        background-image: url("header-bg2.jpg");
+        color: #fff;
+      }
+
+      .container-logo {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        margin-top: 0;
+      }
+
+
+      .logo {
+        display: block;
+        width: 35%;
+        margin: 20px auto 20px auto;
+
+      }
+
+
+      .jumbotron {
+        padding: 0.8rem;
+        height: 400px;
+      }
+
+
+      /* navbar */
+      .navbar {
+        padding: 0 0 4.5rem;
+        /* position: sticky; */
+      }
+
+
+      /* Highlight text in  */
+      div.highlightTextIn a {
+        color: rgba(0, 0, 0, 0.4);
+      }
+
+      div.highlightTextIn a:before {
+        transform: scale(1.2);
+      }
+
+
+      .container-fluid {
+        padding: 0 10%;
+        position: sticky;
+        height: 90px;
+        /* background-image: linear-gradient(to right, #12233d, #003c55, #005658, #0a6c46, #647c2d); */
+      }
+
+      .nav-item {
+        padding: 0 1px;
+      }
+
+      .nav-link {
+        font-size: 1.2rem;
+        font-family: "Montserrat";
+      }
+
+      .navbar-toggler {
+        padding: .25rem .75rem;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: .25rem;
+        width: auto;
+      }
+
+      .nav {
+        position: sticky;
+      }
+
+      .moving-text {
+        font-family: 'Montserrat', sans-serif;
+        margin-top: 15px;
+        color: #fff;
+        background-color: #06623b;
+      }
+
+
+      /* footer */
+
+
+      /* bottom container */
+      .footer-para {
+        color: #EAF6F6;
+      }
+
+      .footer-left {
+        float: left;
+        /* width:500px;
+   height:300px; */
+        margin-right: 50px;
+        margin-left: 10px;
+      }
+
+      .footer-middle {
+        float: left;
+        /* width:25%;
+    height:300px; */
+        /* margin-top: 250px; */
+        margin-left: 160px;
+      }
+
+      .footer-right {
+        float: right;
+        margin-right: 10px;
+        /* width:25%;
+    height:300px; */
+      }
+
+      .footer-link {
+        padding: 120px 15px 12px 0px;
+      }
+
+      #map {
+        height: 200px;
+        width: 50%;
+      }
+
+      .bottom-container {
+        background-color: #06623b;
+        /* background-image: linear-gradient(to right, #12233d, #003c55, #005658, #0a6c46, #647c2d); */
+        padding: 50px 0 20px;
+        margin-top: 100px;
+        display: block;
+        height: 350px;
+      }
+
+      a {
+        font-family: 'Montserrat', sans-serif;
+        text-decoration: none;
+      }
+
+      .copyright {
+        color: black;
+        font-size: 0.75rem;
+        padding-top: 15px;
+        margin-left: 290px;
+      }
+
+      a:link {
+        color: #11999E;
+      }
+
+      a:visited {
+        color: green;
+      }
+
+      a:hover {
+        color: red;
+      }
+
+      a:active {
+        color: blue;
+      }
+
+
+      @media only screen and (max-width:600px) {
+        .header{width: 100%;}
+        #title {width: 100%;}
+        #title .row {width: 100%;}
+        .contact-top{width: 100%;
+        float: none;}
+        .header-contact {width: 100%;
+        display: block;
+        float: none;
+        text-align: center;}
+        .logo-img { width: 55%;
+            justify-content: center;
+            margin-left: 129px;
+            height: 101px;
+        }
+        .container-logo {width: 100%;
+          display: table;
+          text-align: center;}
+        .container-logo .name{width: 100%;
+          margin-top: 40px;
+          margin-left: 13px;}
+        .container-logo .place{width: 100%;}
+        .logo{width: 50%;
+         height: 68px;
+         display: block;
+         justify-content: center;
+         margin-left: 70px;}
+          .navbar{width: 100%;}
+        .moving-text{ width: 100%;}
+        .img-fluid{display: block;}
+        .bottom-container {width: 100%;
+        height: 765px;}
+        .footer-left {width: 100%;
+          text-align: center;
+          margin-bottom: 20px;}
+        .footer-middle {width: 100%;
+        text-align: center;
+        margin-left: 2px;}
+        .footer-link {width: 100%;
+          width: 100%;
+          margin-top: -96px;
+          margin-bottom: 17px;
+          margin-left: 6px;
+        height: 40px;}
+        .footer-right {width: 100%;
+        text-align: center;
+        margin-top: 35px;
+      margin-right: auto;}
+        #map {width: 100%;}
+        .footer-copyright {width: 100%;}
+        .copyright{width: 100%;
+        height: 30px;
+      margin-left: auto;}
+      }
+    @media only screen and (min-width: 600px) {
+      .header{width: 100%;}
+      #title {width: 100%;}
+      #title .row {width: 100%;}
+      .contact-top{width: 100%;
+      }
+      .header-contact {width: 100%;
+      display: flex;
+    }
+      .logo-img {width: 55%;
+      justify-content: center;
+      margin-left: 77px;
+      height: 113px;
+      }
+      .container-logo {width: 100%;
+        display: table;
+        text-align: center;}
+      .container-logo .name{width: 100%;
+        margin-top: 40px;
+        margin-left: 13px;}
+      .container-logo .place{width: 100%;}
+      .logo{width: 53%;
+        height: 94px;
+        display: block;
+        justify-content: center;
+        margin-left: 106px;}
+        .navbar{width: 100%;}
+      .moving-text{ width: 100%;}
+      .bottom-container {width: 100%;
+      height: 765px;}
+      .footer-left {width: 100%;
+        text-align: center;
+        margin-bottom: 20px;}
+      .footer-middle {width: 100%;
+      text-align: center;
+      margin-left: 2px;}
+      .footer-link {width: 100%;
+        width: 100%;
+        margin-top: -96px;
+        margin-bottom: 17px;
+        margin-left: 10px;
+      height: 40px;}
+      .footer-right {width: 100%;
+      text-align: center;
+      margin-top: 35px;
+    margin-right: auto;}
+      #map {width: 100%;}
+      .footer-copyright {width: 100%;}
+      .copyright{width: 100%;
+      height: 30px;
+        margin-left: auto;
+    }
+    }
+    @media only screen and (min-width: 768px) {
+      .logo-img {width: 42%;
+      justify-content: center;
+      margin-left: 146px;
+      height: 113px;
+      }
+      .container-logo {width: 100%;
+        display: table;
+        text-align: center;}
+      .container-logo .name{width: 100%;
+        margin-top: 40px;
+        margin-left: 13px;}
+      .container-logo .place{width: 100%;}
+      .logo{width: 53%;
+        height: 94px;
+        display: block;
+        justify-content: center;
+        margin-left: 106px;}
+        .navbar{width: 100%;}
+      .moving-text{ width: 100%;}
+      .bottom-container {width: 100%;
+      height: 765px;}
+      .footer-left {width: 100%;
+        text-align: center;
+        margin-bottom: 20px;}
+      .footer-middle {width: 100%;
+      text-align: center;
+      margin-left: 2px;}
+      .footer-link {width: 100%;
+        width: 100%;
+        margin-top: -96px;
+        margin-bottom: 17px;
+        margin-left: 10px;
+      height: 40px;}
+      .footer-right {width: 100%;
+      text-align: center;
+      margin-top: 35px;
+    margin-right: auto;}
+      #map {width: 100%;}
+      .footer-copyright {width: 100%;}
+      .copyright{width: 100%;
+      height: 30px;
+      margin-left: auto;}
+    }
+    @media only screen and (min-width: 992px) {
+      .header{width: 100%;}
+      #title {width: 100%;}
+      #title .row {width: 100%;}
+      .contact-top{width: 100%;
+        padding-left: 30px;
+      }
+      .header-contact {width: 100%;
+      display: flex;
+    }
+      .logo-img {width: 42%;
+      justify-content: center;
+      margin-left: 146px;
+      height: 113px;
+      }
+
+      .container-logo {width: 100%;
+        display: table;
+        text-align: center;}
+      .container-logo .name{width: 100%;
+        margin-top: 40px;
+        margin-left: 13px;}
+      .container-logo .place{width: 100%;}
+      .logo{width: 41%;
+        height: 94px;
+        display: block;
+        justify-content: center;
+        margin-left: 215px;}
+        .navbar{width: 100%;}
+      .moving-text{ width: 100%;}
+      .bottom-container {width: 100%;
+      height: 350px;}
+      .footer-left {width: 34.33%;
+        text-align: left;
+        margin-bottom: 20px;}
+      .footer-middle {width: 33.33%;
+      text-align: center;
+      margin-left: -58px;}
+      .footer-link {width: 100%;
+        width: 100%;
+        margin-top: -96px;
+        margin-bottom: 17px;
+        margin-left: 10px;
+      height: 40px;}
+      .footer-right {width: 33.33%;
+      text-align: center;
+      margin-top: -180px;
+    margin-right: 10px;}
+      #map {width: auto;
+      height: 165px;}
+      .footer-copyright {width: 100%;
+      display: flex;}
+      .copyright{width: 100%;
+      height: 30px;
+      margin-left: 289px;}
+    }
+    @media only screen and (min-width: 1200px) {
+      .header{width: 100%;}
+      #title {width: 100%;}
+      #title .row {width: 100%;}
+      .contact-top{width: 100%;
+        padding-left: 6px;
+      }
+      .header-contact {width: 129%;
+      display: flex;
+    }
+      .logo-img { width: 94%;
+        justify-content: center;
+        margin-left: 111px;
+        height: 129px;
+      }
+      .container-logo {width: 33.33%;
+        display: block;
+        text-align: center;
+        margin-left: 391px;}
+      .container-logo .name{width: 100%;
+        margin-top: 40px;
+        margin-left: 13px;}
+      .container-logo .place{width: 100%;}
+      .logo{    width: 41%;
+        height: 94px;
+        display: block;
+        justify-content: center;
+        margin-left: 12px;}
+        .navbar{width: 100%;}
+      .moving-text{ width: 100%;}
+      .bottom-container {width: 100%;
+      height: 350px;}
+      .footer-left {width: 34.33%;
+        text-align: left;
+        margin-bottom: 20px;}
+      .footer-middle {width: 33.33%;
+      text-align: center;
+      margin-left: -58px;}
+      .footer-link {width: 100%;
+        width: 100%;
+        margin-top: -96px;
+        margin-bottom: 17px;
+        margin-left: 10px;
+      height: 40px;}
+      .footer-right {width: 33.33%;
+      text-align: center;
+      margin-top: -180px;}
+      #map {width: auto;}
+      .footer-copyright {width: 100%;}
+      .copyright{width: 100%;
+      height: 30px;
+    margin-left: 365px;}
+    }
+  </style>
+</head>
+
+<body>
+  <script src="js/script.js"></script>
+<!-- <div class="parallax"></div> -->
+<div class="header">
+<section id="title">
+<div class="row" style="background-image:url(images/header-bg2.jpg); background-size:cover; width:100%; margin-left:0;">
+<div class="col-md-12">
+
+  <!-- <div class="jumbotron bg-cover text-white" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url(images/header-bg2.jpg)"> -->
+    <div class="header-contact ">
+  <div class="contact-top" style="float: left;">
+    <i class="fas fa-phone-volume"></i>&nbsp &nbsp Call at: +91 73551 50194
+  </div>
+  <div class="contact-top" style="float: right;">
+      <i class="fas fa-envelope"></i>&nbsp &nbsp Email ID: <a class="header-link" href="mailto:delhipublicschoolfatehpur@gmail.com">delhipublicschoolfatehpur@gmail.com</a>
+  </div>
+    </div>
+    <div class="container-logo">
+      <div class="logo">
+        <img class="logo-img" src="images/dps-logo.jpeg" alt="logo">
+      </div>
+      <div class="name">
+        <center>
+          <h1>DELHI PUBLIC PRIMARY SCHOOL</h1>
+        </center>
+      </div>
+    <div class="place">
+      <center>
+        <p class="para">Fatehpur</p>
+      </center>
+    </div>
+
+
+    </div>
+    <!-- /.container   -->
+  </div>
+
+</div>
+
+    <!-- </div> -->
+
+  </section>
+
+  <div class="container-fluid ">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarTogglerDemo02">
+        <ul class="nav nav-tabs ">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="file:///C:/Users/anush/Desktop/dps/our-school.html" target="_blank">Our Mission</a>
+              <a class="dropdown-item" href="file:///C:/Users/anush/Desktop/dps/chairman.html" target="_blank">Chairman Message</a>
+              <a class="dropdown-item" href="file:///C:/Users/anush/Desktop/dps/director.html" target="_blank">Director Message</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admission</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Admission Form</a>
+              <a class="dropdown-item" href="#">Eligibility</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Infrastructure</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Building</a>
+              <a class="dropdown-item" href="#">Other Facilities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="file:///C:/Users/anush/Desktop/dps/extra-curricular.html" target="_blank">Extra Curricular</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="file:///C:/Users/anush/Desktop/dps/grid-gallery.html" target="_blank" role="button" aria-haspopup="true" aria-expanded="false">Gallery</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="file:///C:/Users/anush/Desktop/dps/grid-gallery.html" target="_blank">Photos</a>
+              <a class="dropdown-item" href="file:///C:/Users/anush/Desktop/dps/grid-gallery.html" target="_blank">Videos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contacts</a>
+          </li>
+        </ul>
+      </div>
+  </div>
+  </div>
+  </div>
+  </nav>
+
+  <div class="moving-text">
+    <marquee behavior="scroll" direction="left">Providing the best computer education in Fatehpur .The way of different education .</marquee>
+
+  </div>
+
+
+  <div class="bg-light">
+    <div class="container py-5">
+      <div class="row h-100 align-items-center py-5">
+        <div class="col-lg-6">
+          <h1 class="display-4" style="color:#649d66; font-size:30px;">CHAIRMAN MESSAGE</h1>
+          <p class="lead text-muted mb-0" style="font-size:medium;">
+            Dear Students and Parents,
+
+            Welcome to the 2020-2021 school year! Our commitment at DELHI PUBLIC SCHOOL is to provide a safe and intellectually challenging environment that will empower students to become innovative thinkers, creative problem solvers and inspired
+            learners prepared to thrive in the twenty-first century.
+
+            High standards and expectations for each student in regard to academic performance, co-curricular participation, and responsible citizenship are the foundation of our school. It is with pride that we hold these high standards and ask each
+            of our students to commit to maintaining the extraordinary record of achievement and contribution that has been the legacy of DELHI PUBLIC SCHOOL students. It is the contribution of our students to our school community that makes DELHI
+            PUBLIC SCHOOL an exceptional learning community. Full participation in academic and co-curricular programs and a willingness to act responsibly as an individual within our educational environment are the factors that enable all to have a
+            successful and enjoyable year.
+          </p>
+
+        </div>
+        <div class="col-lg-6 d-none d-lg-block"><img src="images2/21.jpeg" alt="" class="img-fluid"></div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <div class="bottom-container">
+    <div class="footer-left">
+      <h4 style="font-weight:bold;">Contact Us:</h4>
+      <p class="footer-para"><i class="fas fa-phone-square-alt">&nbsp &nbsp</i>+91 73551 50194</p>
+      <p class="footer-para"><i class="fas fa-envelope"></i>&nbsp &nbsp<a class="header-link" style="color:#fff;" href="mailto:delhipublicschoolfatehpur@gmail.com">delhipublicschoolfatehpur@gmail.com</a></p>
+      <p class="footer-para"><i class="fas fa-globe-americas"></i>&nbsp &nbsp<a href="https://www.dpsfatehpur.in"></a>www.dpsfatehpur.in</p>
+    </div>
+    <div class="footer-middle">
+      <h4 style="font-weight:bold;">Quick Links:</h4>
+      <a style="color:#fff;" href="file:///C:/Users/anush/Desktop/dps/our-school.html" target="_blank">About</a><br />
+      <a style="color:#fff;" href="">Admission</a><br />
+      <a style="color:#fff;" href="">Contact</a><br />
+      <a style="color:#fff;" href="">Gallery</a><br />
+      <div class="footer-link">
+        <center>
+          <a class="footer-link" href="https://wa.me/917355150194/?text=Hello Welcome to Dps Fatehpur"><i class="fab fa-whatsapp fa-3x" style="color: #fff;"></i></a>
+          <a class="footer-link" href="https://www.facebook.com/info.dpsfatehpur/"><i class="fab fa-facebook fa-3x" style="color: #fff;"></i></a>
+        </center>
+      </div>
+    </div>
+    <div class="footer-right">
+      <h4 style="font-weight:bold;">Address:</h4>
+      <pre style="color:#fff;">
+       <i class="fas fa-map-marker-alt"></i> Agrasen Chauraha , Near District Jail,
+         Jail road, Fatehpur, Uttar Pradesh,
+         Pincode : 212601
+      </pre>
+      <div id="map"></div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <center>
+      <p class="copyright"> © Delhi Public School, Fatehpur.</p>
+    </center>
+  </div>
+
+  <script>
+  function initMap(){
+    var location = { lat : 25.920074 ,lng : 80.809998};
+    var map = new google.maps.Map(document.getElementById("map"),{
+      zoom:4,
+      center:location
+    });
+
+  }
+
+  </script>
+
+
+</body>
+
+</html>
